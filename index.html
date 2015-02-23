@@ -10,7 +10,12 @@
   </head>
   <body>
     <div class="container" ng-controller="PetControl">
-      <h1>Petz.com</h1>
+      <h1>Petz.com
+      <small>
+        <br>
+        Ask how you can be a inve$tor!
+      </small>
+      </h1>
       <div class="row">
         <div class="col-xs-12">
             <div class="form-group">
@@ -18,8 +23,11 @@
                 <input type="number" class="form-control" ng-model="desiredAmount" placeholder="HOW MUCH PETS DO YOU NEED?!">
 
                 <select ng-model="myColor" ng-options="color.name for color in colors"></select>
-
-                <button type="submit" class="btn btn-danger">PETZ!</button>
+                <select ng-model="myShape" ng-options="shape.name for shape in shapes"></select>
+                <select ng-model="mySize" ng-options="size.name for size in sizes"></select>
+                <input type="checkbox" ng-model="shipping1">Fast shipping
+                <input type="checkbox" ng-model="shipping2">Slow shipping
+                <button type="submit" class="btn btn-danger" ng-click="myStyle={color: myColor.name}">PETZ!</button>
               </form>
             </div>
         </div>
@@ -27,8 +35,18 @@
       <div class="row">
         <div class="col-xs-12" ng-show="totalCost">
           <h2>Total Cost</h2>
-            ${{totalCost}}.00 (shipping not included)<br>
-            {{myColor.name}}
+            ${{totalCost}}.00 (shipping not included)
+            <br>
+            <span ng-show="myColor" ng-style="myStyle">{{myColor.name}}</span>
+            <br>
+            <span ng-show="myShape">{{myShape.name}}</span>
+            <br>
+            <span ng-show="mySize">{{mySize.name}}</span>
+            <br>
+            <span ng-show="shipping1">You chose fast shipping.</span>
+            <br>
+            <span ng-show="shipping2">Slowest shipping. They will basically get to your house eventually.</span>
+            <br>
         </div>
       </div>
     </div>

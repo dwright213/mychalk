@@ -1,9 +1,18 @@
+* {
+  text-align: right;
+}
 body { background: url("../img/stars.jpg");
-color: #00FF00;
+
 }
 
 input { color: #000000;
 }
 
 h1, h2 { text-shadow: 0 0 40px #FFF700;
+}
+
+.container {
+  background: #B5B5B5;
+  border-style: outset;
+  border-width: 5px;
 }
