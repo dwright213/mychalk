@@ -1,1 +1,1 @@
-var chalk = angular.module("chalk", []);
+var chalk = angular.module("pets", []);
